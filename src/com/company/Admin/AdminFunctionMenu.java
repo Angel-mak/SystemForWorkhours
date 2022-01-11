@@ -11,7 +11,6 @@ public class AdminFunctionMenu extends DialogNListPrint {
     ReadWriteFile File = new ReadWriteFile();
     private String projectName;
     AdminFunctionsWorker adminFunctionsWorker = new AdminFunctionsWorker();
-    String WorkerFilepath = "src/com/company/FileAndFileFunctions/WorkerFile.json";
     String ClientFilepath = "src/com/company/FileAndFileFunctions/Clientsfile.json";
 
     public void setProjectName (String projectName) {
@@ -25,26 +24,26 @@ public class AdminFunctionMenu extends DialogNListPrint {
     private void addWorker (Scanner inpot) throws Exception {
         System.out.print("name: ");
         String name = inpot.nextLine();
+        inpot.nextLine();
         System.out.print("password: ");
         String password = inpot.nextLine();
 
         adminFunctionsWorker.addWorker(name, password);
-        File.writeToFile(WorkerFilepath, adminFunctionsWorker.workerList);
     }
 
     private void removeWorker (Scanner inpot) throws Exception {
         System.out.print("name: ");
         String name = inpot.nextLine();
-
         adminFunctionsWorker.removeWorker(name);
-        File.writeToFile(WorkerFilepath, adminFunctionsWorker.workerList);
     }
 
     private void addClient (Scanner inpot) throws Exception {
         System.out.print("name: ");
         String name = inpot.nextLine();
+        inpot.nextLine();
         System.out.print("project name: ");
         String projectName = inpot.nextLine();
+        inpot.nextLine();
         setProjectName(projectName);
         System.out.print("date of expire 'dd,MM,yyyy': ");
         String dateOfExpire = inpot.nextLine();
@@ -57,6 +56,7 @@ public class AdminFunctionMenu extends DialogNListPrint {
     private void workerStatistic (Scanner inpot) throws Exception {
         System.out.print("name: ");
         String name = inpot.nextLine();
+        inpot.nextLine();
         System.out.print("password: ");
         String password = inpot.nextLine();
 

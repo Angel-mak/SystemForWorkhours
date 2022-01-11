@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Client {
     private String name;
     private String projectName;
-    private LocalDate dateOfExpire;
+
 
     public String getName() {
         return name;
@@ -15,13 +15,8 @@ public class Client {
         return projectName;
     }
 
-    public LocalDate getDateOfExpire() {
-        return dateOfExpire;
-    }
-
-    public Client(String name, String projectName, LocalDate dateOfExpire) {
+    public Client(String name, String projectName) {
         this.name = name;
         this.projectName = projectName;
-        this.dateOfExpire = dateOfExpire;
     }
 }

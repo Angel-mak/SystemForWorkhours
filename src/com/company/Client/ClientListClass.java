@@ -27,9 +27,7 @@ public class ClientListClass {
                 throw new Exception("This project already exist1");
             }else{
                 try {
-                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                    LocalDate finalDate = LocalDate.parse(dateOfExpire, dtf);
-                    Client client = new Client(name, projectName, finalDate);
+                    Client client = new Client(name,projectName);
                     clientList.add(client);
                 }catch (Exception e){
                     System.out.println("Invalid date format!");

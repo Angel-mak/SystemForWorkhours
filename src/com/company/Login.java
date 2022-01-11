@@ -20,23 +20,24 @@ public class Login extends DialogNListPrint {
     }
 
     public void login(Scanner inpot) throws Exception {
-        loginDialog(inpot);
+        System.out.println("Hello and welcome to our system for monitor the work hours in you company.");
+        System.out.println("First you have to log either as 'admin' or 'worker' .");
+        System.out.println("For more information about admin privileges - press 1");
+        System.out.println("For more information about worker privileges - press 2");
+        System.out.println("To continue to login - press 0");
 
-        System.out.print("Who are you: ");
-        String user = inpot.nextLine();
-        String userLower = user.toLowerCase(Locale.ROOT);
-
-        if (userLower.equals("admin")){
-            loginAdmin(inpot);
-        }else if(userLower.equals("worker")){
-
-        }else{
-            throw new Exception("Invalid input!");
-        }
+        int ans = inpot.nextInt();
+        switch (ans){
+            case 0 ->login(inpot);
+            case 1 ->loginAdmin(inpot);
+            case 2 ->loginWorker(inpot);
+            default -> throw new Exception("Invalid input");}
     }
 
     public void loginAdmin(Scanner inpot) throws Exception {
+
         System.out.print("password: ");
+        inpot.nextLine();
         String pass = inpot.nextLine();
 
         Admin admin = new Admin();
