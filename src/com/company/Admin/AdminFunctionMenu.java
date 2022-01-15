@@ -49,7 +49,7 @@ public class AdminFunctionMenu extends DialogNListPrint {
         String dateOfExpire = inpot.nextLine();
 
         ClientListClass clientListClass = new ClientListClass();
-        clientListClass.add(name, getProjectName(), dateOfExpire);
+        clientListClass.add(name, getProjectName());
         File.writeToFile(ClientFilepath, clientListClass.getClientList());
     }
 

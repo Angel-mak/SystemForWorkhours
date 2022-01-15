@@ -16,7 +16,7 @@ public class ClientListClass {
         }
     }
 
-    public void add(String name, String projectName, String dateOfExpire) throws Exception {
+    public void add(String name, String projectName) throws Exception {
         if (clientList.size() >= 10){
             throw new Exception("The list is full!");
         }
